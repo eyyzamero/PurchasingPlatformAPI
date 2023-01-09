@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
-import { ITokenModel, ITokenPayloadModel, TokenModel, TokenPayloadModel } from 'src/core/models';
-import { IUserModel } from 'src/core/users/models';
-import { UsersService } from 'src/core/users/services/users.service';
+import { ITokenModel, ITokenPayloadModel, IUserModel, TokenModel, TokenPayloadModel } from 'src/core/models';
+import { UsersService } from 'src/core/services/users/users.service';
 
 @Injectable()
 export class AuthenticationService {

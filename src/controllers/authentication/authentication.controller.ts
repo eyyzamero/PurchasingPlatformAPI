@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
 import { NoAuthentication } from 'src/core/decorators';
 import { AuthenticationLocalGuard } from 'src/core/guards';
+import { IUserModel } from 'src/core/models';
 import { AuthenticationService } from 'src/core/services/authentication/authentication.service';
-import { IUserModel } from 'src/core/users/models';
 import { IAuthenticationLoginReq, IAuthenticationLoginRes } from './contracts';
 
 @Controller('authentication')

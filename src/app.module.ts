@@ -6,7 +6,7 @@ import { AuthenticationController } from './controllers/authentication/authentic
 import { Configuration } from './core/enums';
 import { AuthenticationJwtGuard } from './core/guards';
 import { configurationLoaderFn } from './core/helpers';
-import { AuthenticationModule } from './core/modules';
+import { AuthenticationModule } from './core/modules/authentication/authentication.module';
 import { DatabaseService } from './core/services/database/database.service';
 import { ConfigurationMapperService } from './core/services/mapper';
 

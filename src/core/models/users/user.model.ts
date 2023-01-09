@@ -1,4 +1,4 @@
-import { IUserModel } from '.';
+import { IUserModel } from "..";
 
 export class UserModel implements IUserModel {
 
