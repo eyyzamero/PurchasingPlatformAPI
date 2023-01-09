@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { ConfigurationModel, IConfigurationModel } from "src/core/configuration/models";
+import { Injectable } from '@nestjs/common';
 import * as mssql from 'mssql';
+import { ConfigurationModel, IConfigurationModel } from 'src/core/models';
 
 @Injectable()
 export class ConfigurationMapperService {
@@ -10,6 +10,7 @@ export class ConfigurationMapperService {
   static processEnvironmentToIConfigurationModel(): IConfigurationModel {
     const dest = new ConfigurationModel(
       this._processEnvironmentToMssqlConfig(),
+      process.env.JWT_SECRET,
       Boolean(process.env.PRODUCTION),
       process.env.VERSION
     );

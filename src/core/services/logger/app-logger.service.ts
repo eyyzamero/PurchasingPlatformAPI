@@ -1,6 +1,6 @@
-import { Injectable, Scope } from "@nestjs/common";
-import { AppContext } from "src/core/enums";
-import { ConsoleColor, ConsoleStyle } from "src/core/enums";
+import { Injectable, Scope } from '@nestjs/common';
+import { AppContext } from 'src/core/enums';
+import { ConsoleColor, ConsoleStyle } from 'src/core/enums';
 
 @Injectable({ scope: Scope.TRANSIENT })
 export class AppLoggerService {

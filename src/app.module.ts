@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { APP_GUARD } from '@nestjs/core';
 import { AppController } from './app.controller';
-import { configurationLoaderFn } from './core/configuration';
-import { Configuration } from './core/configuration/enums';
+import { AuthenticationController } from './controllers/authentication/authentication.controller';
+import { Configuration } from './core/enums';
+import { AuthenticationJwtGuard } from './core/guards';
+import { configurationLoaderFn } from './core/helpers';
+import { AuthenticationModule } from './core/modules';
 import { DatabaseService } from './core/services/database/database.service';
 import { ConfigurationMapperService } from './core/services/mapper';
 
@@ -14,15 +18,21 @@ import { ConfigurationMapperService } from './core/services/mapper';
       load: [
         configurationLoaderFn
       ]
-    })
+    }),
+    AuthenticationModule
   ],
   controllers: [
-    AppController
+    AppController,
+    AuthenticationController
   ],
   providers: [
     ConfigurationMapperService,
     ConfigService,
-    DatabaseService
+    DatabaseService,
+    {
+      provide: APP_GUARD,
+      useClass: AuthenticationJwtGuard
+    }
   ],
 })
 export class AppModule { }
