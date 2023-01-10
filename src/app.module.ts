@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
-import { AppController } from './app.controller';
 import { AuthenticationController } from './controllers/authentication/authentication.controller';
 import { Configuration } from './core/enums';
 import { AuthenticationJwtGuard } from './core/guards';
@@ -22,7 +21,6 @@ import { ConfigurationMapperService } from './core/services/mapper';
     AuthenticationModule
   ],
   controllers: [
-    AppController,
     AuthenticationController
   ],
   providers: [
