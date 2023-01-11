@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
+import { UsersService } from 'src/controllers/users/services/users.service';
 import { ITokenModel, ITokenPayloadModel, IUserModel, TokenModel, TokenPayloadModel } from 'src/core/models';
-import { UsersService } from 'src/core/services/users/users.service';
 
 @Injectable()
 export class AuthenticationService {
@@ -14,7 +14,7 @@ export class AuthenticationService {
   ) { }
 
   async validateUser(login: string, password: string): Promise<IUserModel | null> {
-    const user = await this._usersService.getUserByLogin(login);
+    const user = await this._usersService.getOne(login);
     return user && user.password === password ? user : null;
   }
 

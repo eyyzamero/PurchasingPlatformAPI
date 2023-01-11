@@ -4,10 +4,13 @@ import { PassportModule } from '@nestjs/passport/dist';
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { AuthenticationLocalStrategy } from '../../strategies';
 import { JwtStrategy } from 'src/core/strategies/jwt/jwt.strategy';
-import { UsersModule } from '../users/users.module';
+import { UsersModule } from 'src/controllers/users/users.module';
+import { UsersService } from 'src/controllers/users/services/users.service';
+import { DatabaseModule } from '../database/database.module';
 
 @Module({ 
   imports: [
+    DatabaseModule,
     UsersModule,
     PassportModule,
     JwtModule.register({
@@ -18,6 +21,7 @@ import { UsersModule } from '../users/users.module';
     })
   ],
   providers: [
+    UsersService,
     AuthenticationService,
     AuthenticationLocalStrategy,
     JwtStrategy
