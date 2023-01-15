@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { HttpCode } from '@nestjs/common/decorators';
 import { NoAuthentication } from 'src/core/decorators';
 import { AuthenticationLocalGuard } from 'src/core/guards';
 import { IUserModel } from 'src/core/models';
@@ -15,6 +16,7 @@ export class AuthenticationController {
   @NoAuthentication()
   @UseGuards(AuthenticationLocalGuard)
   @Post('login')
+  @HttpCode(200)
   async login(@Request() req: IAuthenticationLoginReq): Promise<IAuthenticationLoginRes> {
     const res = this._authenticationService.getToken(req.user);
     return res;
