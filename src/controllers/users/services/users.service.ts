@@ -1,8 +1,8 @@
-import { Inject, Injectable } from "@nestjs/common";
-import { User } from "src/core/entities";
-import { IUserModel } from "src/core/models";
-import { EntitiesMapperService } from "src/core/services/mapper/entities/entities-mapper.service";
-import { Repository } from "typeorm";
+import { Inject, Injectable } from '@nestjs/common';
+import { User } from 'src/core/entities';
+import { IUserModel } from 'src/core/models';
+import { EntitiesMapperService } from 'src/core/services/mapper/entities/entities-mapper.service';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class UsersService {

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport/dist';
 import { AuthenticationService } from '../../services/authentication/authentication.service';
@@ -10,7 +10,7 @@ import { DatabaseModule } from '../database/database.module';
 
 @Module({ 
   imports: [
-    DatabaseModule,
+    forwardRef(() => DatabaseModule),
     UsersModule,
     PassportModule,
     JwtModule.register({

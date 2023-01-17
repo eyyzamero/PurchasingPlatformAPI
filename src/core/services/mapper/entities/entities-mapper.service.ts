@@ -1,6 +1,6 @@
-import { Injectable } from "@nestjs/common";
-import { User } from "src/core/entities";
-import { IUserModel, UserModel } from "src/core/models";
+import { Injectable } from '@nestjs/common';
+import { User } from 'src/core/entities';
+import { IUserModel, UserModel } from 'src/core/models';
 
 @Injectable()
 export class EntitiesMapperService {

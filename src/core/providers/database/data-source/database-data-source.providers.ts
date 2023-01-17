@@ -1,5 +1,5 @@
-import { Provider } from "@nestjs/common";
-import { databaseDataSource } from "src/core/helpers";
+import { Provider } from '@nestjs/common';
+import { databaseDataSource } from 'src/core/helpers';
 
 export const databaseDataSourceProviders: Array<Provider> = [
   {
