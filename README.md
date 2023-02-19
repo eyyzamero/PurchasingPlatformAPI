@@ -1,18 +1,18 @@
 # PurchasingPlatformAPI
 
-Projekt jest API, które docelowo ma zawierać logikę pozwalającą na zarządzanie sklepem e-commerce'owym
+The project is an API that will eventually contain logic to manage an e-commerce store.
 
-## Stack technologiczny
+## Technology stack
 
 - NestJS v9.0.0
 - MSSQL v7.3.5
 - TypeORM v0.3.11
 
-## Docelowe funkcje aplikacji (w opracowaniu)
+## Target application features
 
-- Autentykacja
-- Autoryzacja
-- Zarządzanie użytkownikami
-- Zarządzanie produktami / kategoriami produktów
-- Zarządzanie zamówieniami
-- Przetwarzanie płatności
+- Authentication
+- Authorization
+- Users management
+- Product / product category management
+- Order management
+- Payment processing
